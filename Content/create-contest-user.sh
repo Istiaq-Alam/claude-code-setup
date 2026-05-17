@@ -2,12 +2,12 @@
 
 set -e
 
-USER_NAME="mock-stu"
+USER_NAME="mock-stu"   
 
 echo "======================================"
 echo " NixOS Contest User Setup Script"
 echo "======================================"
-
+    
 # Step 1: Install mkpasswd if not available
 echo "[+] Ensuring mkpasswd is available..."
 nix-shell -p mkpasswd --run "echo 'mkpasswd ready'" > /dev/null
@@ -51,7 +51,7 @@ sudo nixos-rebuild switch
 echo "[+] Verifying user..."
 if id "$USER_NAME" &>/dev/null; then
     echo "[✔] User '$USER_NAME' created successfully"
-else
+else   
     echo "[✘] User creation failed"
     exit 1
 fi
